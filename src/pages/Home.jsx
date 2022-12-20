@@ -8,12 +8,12 @@ function Home() {
             <NavBar/>
             <div className='Home__inner container'>
                 <div className='row container align-items-center'>
-                    <div className='Home__inner__textField col-12 col-lg-7 mt-3 mx-auto'>
+                    <div className='Home__inner__textField col-12 col-lg-9 mt-3 mx-auto'>
                         <h1 className='display-2 text-white font-weight-bolder mb-4'>
-                            Certificate Verification
+                            Welcome to the Decentralized Certificate Verification Sysytem
                         </h1>
                         <p className='text-white'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis s
+                           Our system allows employers and organizations to easily verify univrsity degrees in seconds
                         </p>
                        <div className='input-group input-group-lg mb-3 mt-5'>
                         <input type="text" className='form-control' placeholder='Enter certificate ID' />
