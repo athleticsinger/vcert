@@ -8,8 +8,8 @@ function NavBar() {
                 <div className='container'>
                 <p className='navbar-brand'><span>verify</span>am</p>
                 <div className='navBarLinks d-flex'>
-                    <Link  className='mr-3'>login</Link>
-                    <Link to='/login' className='btn btn-success'>instituion</Link>
+                    {/* <Link  className='mr-3'>login</Link> */}
+                    <Link to='/login' className='btn btn-success'>Login</Link>
                 </div>
                 </div>
             </div>
