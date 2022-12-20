@@ -9,8 +9,8 @@ function Home() {
             <div className='Home__inner container'>
                 <div className='row container align-items-center'>
                     <div className='Home__inner__textField col-12 col-lg-9 mt-3 mx-auto'>
-                        <h1 className='display-2 text-white font-weight-bolder mb-4'>
-                            Welcome to the Decentralized Certificate Verification Sysytem
+                        <h1 className='display-3 text-white font-weight-bolder mb-4'>
+                            Welcome to the Decentralized Certificate Verification System
                         </h1>
                         <p className='text-white'>
                            Our system allows employers and organizations to easily verify univrsity degrees in seconds
