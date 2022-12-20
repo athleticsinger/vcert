@@ -1,0 +1,16 @@
+.navBar{
+    // position: fixed;
+    width: 100%;
+    font-size: 22px;
+    padding: 16px 0px;
+    color: #fff;
+    .navBarLinks{
+        justify-content: space-between;
+        a{
+            padding: 0 16px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+        }
+    }
+}

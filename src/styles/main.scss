@@ -1,0 +1,21 @@
+//variables
+@import 'variables/variables';
+
+// components
+@import 'components/navbar';
+@import 'components/adminNav';
+
+//pages
+@import 'pages/home';
+@import 'pages/login';
+@import 'pages/admin';
+
+body{
+    // background-color: #0e0b2b;
+    font-family: 'proj-rg';
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    
+}
