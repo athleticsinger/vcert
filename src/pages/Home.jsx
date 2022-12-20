@@ -26,7 +26,7 @@ function Home() {
                             Welcome to the Decentralized Certificate Verification System
                         </h1>
                         <p className='text-white'>
-                           Our system allows employers and organizations to easily verify univrsity degrees in seconds
+                           Our system allows employers and organizations to easily verify university degrees in seconds
                         </p>
                        <div className='input-group input-group-lg mb-3 mt-5'>
                         <input type="text" className='form-control' placeholder='Enter certificate ID'
