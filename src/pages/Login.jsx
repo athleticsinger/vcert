@@ -49,9 +49,13 @@ function Login() {
                 </div>
                 <div className='col-lg-6 right'>
                     <div className='container'>
-                        <h5 className='text-white'>Don't have an account?</h5>
+                        <h5 className='text-white mb-4'>Don't have an account?</h5>
                         {/* <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor</p> */}
-                        <button className='btn btn-success'>Register</button>
+                        <button className='btn btn-success'
+                        onClick={()=>{
+                            navigate('/register')
+                        }}
+                        >Register</button>
                     </div>
                 </div>
             </div>

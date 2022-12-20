@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import NavBar from '../components/NavBar';
 import uploadImg from '../props/uploadImg.svg';
 function Home() {
-    const [certificate, setCertificate] = useState([])
+    const [ID, setID] = useState([])
+    const [modalShow, setModalShow] = React.useState(false);
+
+    // function
     return (
         <div className='Home'>
             <NavBar/>
@@ -16,7 +19,11 @@ function Home() {
                            Our system allows employers and organizations to easily verify univrsity degrees in seconds
                         </p>
                        <div className='input-group input-group-lg mb-3 mt-5'>
-                        <input type="text" className='form-control' placeholder='Enter certificate ID' />
+                        <input type="text" className='form-control' placeholder='Enter certificate ID'
+                            onChange={(e)=>{
+                                setID(e.target.value)
+                            }}
+                        />
                             <button className='btn btn-lg btn-success'>Verify</button>
                        </div>
                     </div>
