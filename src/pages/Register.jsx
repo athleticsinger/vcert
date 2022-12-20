@@ -1,12 +1,55 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth } from '../contexts/AuthContext';
+import { db } from '../firebaseConfig';
+import { doc, setDoc, } from "firebase/firestore";
 
 function Register() {
     const navigate = useNavigate();
     const [universityName, setUniversityName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const {signUp, Uid} = useAuth();
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    function Validate() {
+        if(password.length < 8){
+            setError("Password must be atleast 8 characters long")
+        }
+        else if ( password.length  === 0  || email.length  === 0  ) {
+            setError("It appears some fields are empty")
+        }
+        else{
+            setError('');
+            setLoading(true);
+        }
+    }
+
+    const handleRegister = async ()=>{
+        Validate();
+       try {
+         await signUp(email, password);
+            // temporary working solution (not best practice),
+           await setDoc(doc(db, "universities", Uid[0]), {
+                universityName : universityName,
+                email  : email,
+                // password: password
+            }).then(
+                navigate('/admin')
+            )
+         
+       //  console.log(currentUser)
+
+        // const loguser = await signInWithEmailAndPassword(auth, email, password);
+        // sessionStorage.setItem('userID', auth.currentUser.uid)
+        
+       } catch (error) {
+        console.log(error);
+       setError('Failed to create account (Check your network) ');
+       setLoading(false)
+       }
+    }
 
     return (
         <div className='Login'>
@@ -57,7 +100,8 @@ function Register() {
                                     </div>
                                 </div> */}
                         
-                        <button onClick={()=> navigate('/admin')} className='mt-5 btn btn-primary btn-block btn-lg'>Register</button>
+                        <button onClick={()=> {handleRegister()}} className='mt-5 btn btn-primary btn-block btn-lg'>Register</button>
+                        {error && <p className='error text-red mt-3'>{error}</p>}
                     </div>
 
                 </div>
@@ -69,7 +113,7 @@ function Register() {
                         onClick={()=>{
                             navigate('/login')
                         }}
-                        >Login</button>
+                        >{loading ? 'loading...': "Login"}</button>
                     </div>
                 </div>
             </div>
