@@ -57,13 +57,13 @@ function Register() {
                                     </div>
                                 </div> */}
                         
-                        <button onClick={()=> navigate('/admin')} className='mt-5 btn btn-primary btn-block btn-lg'>Login</button>
+                        <button onClick={()=> navigate('/admin')} className='mt-5 btn btn-primary btn-block btn-lg'>Register</button>
                     </div>
 
                 </div>
                 <div className='col-lg-6 right'>
                     <div className='container'>
-                        <h5 className='text-white mb-4'>Don't have an account?</h5>
+                        <h5 className='text-white mb-4'>Already have an account?</h5>
                         {/* <p className='text-white'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor</p> */}
                         <button className='btn btn-success'
                         onClick={()=>{
