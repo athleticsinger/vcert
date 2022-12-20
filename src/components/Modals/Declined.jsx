@@ -1,8 +1,8 @@
 import Modal from 'react-bootstrap/Modal';
-import icon from '../../props/success-svgrepo-com.svg';
+import icon from '../../props/cancel.svg';
 import { useNavigate } from 'react-router';
 
-function SuccessModal(props) {
+function DeclineModal(props) {
 
   return (
     // <div className='MemberOnly'>
@@ -17,13 +17,12 @@ function SuccessModal(props) {
     <Modal.Body>
       
       <img className='modal-icon' src={icon} alt="" />
-      <h4 className='text-align-center mx-auto mt-4'>Your Certificate has been verified</h4>
+      <h4 className='text-align-center mt-3'>Certificate not issued by institution</h4>
     </Modal.Body>
-  
   </Modal>
     // </div>
   );
 }
 
-export default SuccessModal
+export default DeclineModal
 

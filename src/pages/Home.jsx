@@ -1,11 +1,21 @@
 import React, {useState} from 'react';
 import NavBar from '../components/NavBar';
 import uploadImg from '../props/uploadImg.svg';
+import SuccessModal from '../components/Modals/SuccessModal';
+import DeclineModal from '../components/Modals/Declined';
 function Home() {
     const [ID, setID] = useState([])
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [declineModalShow, setDeclineModalShow] = useState(false);
+    function Validate() {
+        if(ID.length > 3 ){
+            setModalShow(!modalShow)
+        } 
+        if(ID.length < 3 ){
+            setDeclineModalShow(!modalShow)
+        } 
+    } 
 
-    // function
     return (
         <div className='Home'>
             <NavBar/>
@@ -24,7 +34,9 @@ function Home() {
                                 setID(e.target.value)
                             }}
                         />
-                            <button className='btn btn-lg btn-success'>Verify</button>
+                            <button className='btn btn-lg btn-success'
+                            onClick={Validate}
+                            >Verify</button>
                        </div>
                     </div>
                     {/* <div className='Home__inner__imgDrop col-12 col-lg-4 pr-lg-5"'>
@@ -44,6 +56,14 @@ function Home() {
                     </div> */}
                 </div>
             </div>
+            <SuccessModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            />
+            <DeclineModal
+            show={declineModalShow}
+            onHide={() => setDeclineModalShow(false)}
+            />
         </div>
     );
 }
