@@ -5,6 +5,7 @@ import './styles/main.scss'
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import Database from './pages/Database';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='login' element={<Login/>} />
             <Route path='admin' element={<Admin/>} />
+            <Route path='database' element={<Database/>} />
           </Routes>
         </Router>
     </div>

@@ -6,10 +6,10 @@ function NavBar() {
         <div className='navBar'>
             <div className='navbar navbar-main navbar-expand-lg navbar-dark'>
                 <div className='container'>
-                <p className='navbar-brand'>logo</p>
+                <p className='navbar-brand'><span>verify</span>am</p>
                 <div className='navBarLinks d-flex'>
-                    <Link  className=''>link1</Link>
-                    <Link to='/login'>instituion</Link>
+                    <Link  className='mr-3'>login</Link>
+                    <Link to='/login' className='btn btn-success'>instituion</Link>
                 </div>
                 </div>
             </div>

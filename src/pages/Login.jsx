@@ -5,7 +5,7 @@ function Login() {
     const navigate = useNavigate()
     return (
         <div className='Login'>
-            <div className='Login__inner row'>
+            <div className='row Login__inner '>
                 <div className='col-12 col-lg-6 left container'>
                     <div className='container Login__inner__form centered-form'>
                         <div className='form-group mb-4'>

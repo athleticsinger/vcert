@@ -10,7 +10,8 @@
     font-family: "proj-md";
     src: url("../../font/Nunito-Medium.ttf");
 };
-// @font-face {
-//     font-family: "proj-ita";
-//     src: url("../../props/fonts/SF-Pro/FontsFree-Net-SFProDisplay-LightItalic.ttf");
-// };
+
+.btn-success{
+    background-color: #5cc9a7 !important;
+    border-color: #5cc9a7;
+}
