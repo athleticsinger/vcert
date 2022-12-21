@@ -1,7 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import logOutIcon from '../props/logOut.svg';
 
 function AdminSideBar() {
+    const navigate = useNavigate();
+    const {logOut} = useAuth();
+    const handleLogOut = async ()=>{
+        try {
+            await logOut()
+            
+            navigate('/login')   
+    
+        } catch (error) {
+            console.log(error);
+        }
+       }
+
     return (
         <div className="sidebar text-white" id="nav-bar">
             <nav className="header-box">
@@ -13,14 +28,18 @@ function AdminSideBar() {
                              <span class="align-middle"> Dashboard</span>
                         </Link>
                     </li>
-                    <li class="sidebar-item mb-4">
+                    {/* <li class="sidebar-item mb-4">
                         <Link class="sidebar-link" to="/database">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers align-middle"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                              <span class="align-middle"> Database</span>
                         </Link>
-                    </li>
+                    </li> */}
                 </div>
-                <a href="/" className="nav_link sign-out"> <i className='bx bx-log-out nav_icon'></i> <span className="nav_name">SignOut</span> </a>
+                <Link className="nav_link sign-out"
+                    onClick={()=>{
+                        handleLogOut()
+                    }}
+                > <img src={logOutIcon} alt="" /> <span className="nav_name">SignOut</span> </Link>
 
             </nav>
         </div>
