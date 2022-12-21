@@ -1,10 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../firebaseConfig';
+
+
+
 
 function AdminNavBar() {
+    const [userData, setUserData] = useState([]);
+    const {currentUser, loginID} = useAuth();
+
+    useEffect(()=>{
+
+        const getData = async ()=>{
+          try{
+            //console.log(currentUser?.uid);
+            const docRef = doc(db, "universities", loginID || currentUser);
+            const docSnap = await getDoc(docRef);
+            // console.log(auth.currentUser?.uid)
+            
+            if (docSnap.exists()) {
+              setUserData(docSnap.data())
+              //console.log("Document data:", docSnap.data());
+            } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+            }
+          }
+          catch(err){
+            console.log(err);
+          }
+        }
+        getData()
+      },[currentUser])
     return (
         <div className='AdminNav navbar  navbar-light bg-white'>
            {/* <div className='AdminNav__inner d-flex justify-content-space-between'> */}
-           <p>University of Benin</p>
+        <p className='user'>{userData.universityName}</p>
                 <div className='d-flex justify-content-space-between'>
                     
                    <button className='btn btn-success'>Connect Wallet</button>
