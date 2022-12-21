@@ -7,7 +7,7 @@ function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const { logIn } = useAuth();
+    const { logIn } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const auth = getAuth();
@@ -24,7 +24,7 @@ function Login() {
             setLoading(true);
         }
         try {
-            await signInWithEmailAndPassword(auth, email, password)
+            await logIn( email, password)
                 .then(() => {
                     navigate('/admin')
                     // ...

@@ -21,6 +21,8 @@ function AdminNavBar() {
             
             if (docSnap.exists()) {
               setUserData(docSnap.data())
+            //   localStorage.setItem()
+             
               //console.log("Document data:", docSnap.data());
             } else {
               // doc.data() will be undefined in this case
@@ -33,10 +35,11 @@ function AdminNavBar() {
         }
         getData()
       },[currentUser])
+      
     return (
         <div className='AdminNav navbar  navbar-light bg-white'>
            {/* <div className='AdminNav__inner d-flex justify-content-space-between'> */}
-        <p className='user'>{userData.universityName}</p>
+        <p className='user'>{userData.universityName ? userData.universityName : 'University of Benin'}</p>
                 <div className='d-flex justify-content-space-between'>
                     
                    <button className='btn btn-success'>Connect Wallet</button>
