@@ -17,6 +17,7 @@ function Login() {
         if (password.length < 1 || email.length < 1) {
             setError("It appears some fields are empty");
         //     e.preventDefault()
+        setLoading(false)
         }
         else {
             setError('');
@@ -34,6 +35,7 @@ function Login() {
                     console.log(err)
                     console.log(err.code)
                     setError(err.message);
+                    setLoading(false)
                 });
          
         }
@@ -83,7 +85,7 @@ function Login() {
                                     </div>
                                 </div> */}
 
-                        <button onClick={() => { handleSignIn() }} className='mt-5 btn btn-primary btn-block btn-lg'>Login</button>
+                        <button onClick={() => { handleSignIn() }} className='mt-5 btn btn-primary btn-block btn-lg'>{loading ? 'loading...': "Login"}</button>
                         {error && <p className='error text-red mt-3'>{error}</p>}
                     </div>
 
@@ -96,7 +98,7 @@ function Login() {
                             onClick={() => {
                                 navigate('/register')
                             }}
-                        >{loading ? 'loading...': "Register"}</button>
+                        >Register</button>
 
                     </div>
                 </div>

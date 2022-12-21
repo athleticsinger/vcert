@@ -100,7 +100,7 @@ function Register() {
                                     </div>
                                 </div> */}
                         
-                        <button onClick={()=> {handleRegister()}} className='mt-5 btn btn-primary btn-block btn-lg'>Register</button>
+                        <button onClick={()=> {handleRegister()}} className='mt-5 btn btn-primary btn-block btn-lg'>{loading ? 'loading...': "Register"}</button>
                         {error && <p className='error text-red mt-3'>{error}</p>}
                     </div>
 
@@ -113,7 +113,7 @@ function Register() {
                         onClick={()=>{
                             navigate('/login')
                         }}
-                        >{loading ? 'loading...': "Login"}</button>
+                        >Login</button>
                     </div>
                 </div>
             </div>

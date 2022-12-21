@@ -4,10 +4,10 @@ function AdminNavBar() {
     return (
         <div className='AdminNav navbar  navbar-light bg-white'>
            {/* <div className='AdminNav__inner d-flex justify-content-space-between'> */}
-                <p></p>
+           <p>University of Benin</p>
                 <div className='d-flex justify-content-space-between'>
-                    <p>University of Benin</p>
-                    {/* <p>Avatar</p> */}
+                    
+                   <button className='btn btn-success'>Connect Wallet</button>
                 </div>
            {/* </div> */}
         </div>
